@@ -8,12 +8,12 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 import os
 
-# Load environment variables
 load_dotenv()
-
-# Get values from .env
 SECRET_KEY = os.getenv("SECRET_KEY")
-ALGORITHM = "HS256"
+ALGORITHM = os.getenv("ALGORITHM", "HS256")
+
+print("DEBUG SECRET_KEY:", SECRET_KEY)
+
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

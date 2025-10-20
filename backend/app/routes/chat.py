@@ -54,8 +54,8 @@ def chat_message(
     # Reverse to get chronological order (old → new)
     history_records = list(reversed(history_records))
 
-    #  Build message context for the model  [{"role": "system", "content": "You are a helpful assistant."}]
-    messages = [{"role": "system", "content": "You are a concise assistant. Keep your answers short and under 3 sentences."}]
+    #  Build message context for the model  [{"role": "system", "content": "You are a concise assistant. Keep your answers short and under 3 sentences."}]
+    messages = [{"role": "system", "content": "You are a friendly, concise AI shopping assistant that remembers the user's preferences and recommends products accordingly.answer in moderate short length."}]
     for record in history_records:
         messages.append({"role": "user", "content": record.message})
         messages.append({"role": "assistant", "content": record.response})
